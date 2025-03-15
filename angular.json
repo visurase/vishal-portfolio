@@ -32,7 +32,9 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -47,12 +49,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumError": "2MB"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumError": "500kB"
                 }
               ],
               "outputHashing": "all"
@@ -96,6 +98,8 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "node_modules/@fontawesome/fontawesome-free/css/all.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -103,5 +107,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "9120daf7-47a6-4a7d-acb1-7d41d4cc4f61"
   }
 }

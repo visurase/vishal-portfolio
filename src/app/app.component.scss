@@ -1,0 +1,152 @@
+.app-container {
+  min-height: 100vh;
+  position: relative;
+}
+.main-content {
+  padding-top: 70px; // Account for fixed header
+}
+// Scroll Navigation
+.scroll-nav {
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 900;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 15px 0;
+
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        .dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #ccc;
+          margin-right: 10px;
+          transition: all 0.3s ease;
+        }
+
+        .label {
+          opacity: 0;
+          transform: translateX(-10px);
+          transition: all 0.3s ease;
+          color: #333;
+          font-size: 14px;
+          font-weight: 500;
+        }
+
+        &:hover, &.active {
+          .dot {
+            background-color: #4a90e2;
+            transform: scale(1.5);
+          }
+
+          .label {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+  }
+}
+// Scroll to Top Button
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 900;
+
+  &:hover {
+    background-color: #3570b8;
+    transform: translateY(-3px);
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Dark Mode Styles
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+
+  .scroll-nav {
+    ul {
+      li {
+        a {
+          .dot {
+            background-color: #555;
+          }
+
+          .label {
+            color: #f5f5f5;
+          }
+
+          &:hover, &.active {
+            .dot {
+              background-color: #5a9aea;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .scroll-top {
+    background-color: #333;
+    color: #f5f5f5;
+
+    &:hover {
+      background-color: #444;
+    }
+  }
+}
+
+// Section styles
+.section {
+  min-height: 100vh;
+  padding: 100px 0;
+  scroll-margin-top: 70px;
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .scroll-nav {
+    display: none;
+  }
+
+  .scroll-top {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
