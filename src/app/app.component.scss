@@ -39,7 +39,7 @@
           opacity: 0;
           transform: translateX(-10px);
           transition: all 0.3s ease;
-          color: #333;
+          color: #4a90e2;
           font-size: 14px;
           font-weight: 500;
         }
@@ -149,4 +149,71 @@
   }
 }
 
+
+:host-context(body.dark-mode) {
+  .app-container {
+    background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+
+    .section-header {
+      h2 {
+        color: #fff;
+      }
+
+      .underline {
+        background-color: #64b5f6;
+      }
+    }
+
+    .about-content {
+      .about-image {
+        .image-placeholder {
+          background-color: #64b5f6;
+        }
+      }
+
+      .about-text {
+        h3 {
+          color: #64b5f6;
+        }
+
+        p {
+          color: #bbb;
+        }
+
+        .personal-info {
+          .info-grid {
+            .info-label {
+              color: #ddd;
+            }
+
+            .info-value {
+              color: #aaa;
+            }
+          }
+        }
+
+        .about-buttons {
+          .btn {
+            &.primary {
+              background-color: #64b5f6;
+
+              &:hover {
+                background-color: #5aa5e0;
+              }
+            }
+
+            &.secondary {
+              border-color: #64b5f6;
+              color: #64b5f6;
+
+              &:hover {
+                background-color: rgba(100, 181, 246, 0.1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
