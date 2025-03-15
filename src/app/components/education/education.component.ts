@@ -16,7 +16,7 @@ export class EducationComponent {
     {
       degree: 'Bachelor of Engineering in Information Technology',
       institution: 'Sinhgad Institute Of Technology Lonavala ',
-      duration: '2014 - 2180',
+      duration: '2014 - 2018',
       description: 'Graduated with first class honors. Specialized in web development and database management systems.'
     },
     {

@@ -13,6 +13,11 @@ import {NgClass, NgForOf, NgOptimizedImage, TitleCasePipe} from '@angular/common
 import {PortfolioService} from './services/portfolio.service';
 import { Subscription } from 'rxjs';
 
+declare global {
+  interface Window {
+    webkitSpeechRecognition: any;
+  }
+}
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -22,6 +27,7 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   isDarkMode = false;
+  recognition: any;
   title = 'vishal-portfolio';
   sections = [
     { id: 'home', active: true },
@@ -41,6 +47,7 @@ export class AppComponent implements OnInit {
   constructor(private  portfolioService : PortfolioService ) {
   }
   ngOnInit() {
+    this.startListening()
     this.subscription = this.portfolioService.scrollToSection$.subscribe(
       sectionId => {
         this.scrollToSection(sectionId);
@@ -119,4 +126,39 @@ export class AppComponent implements OnInit {
   //   }
   // }
 
+  startListening() {
+    if (!('webkitSpeechRecognition' in window)) {
+      alert('Speech Recognition is not supported in this browser.');
+      return;
+    }
+
+    this.recognition = new window.webkitSpeechRecognition();
+    this.recognition.lang = 'en-US';
+    this.recognition.continuous = true; // Keeps listening forever
+    this.recognition.interimResults = false;
+
+    this.recognition.onresult = (event: any) => {
+      const transcript = event.results[event.results.length - 1][0].transcript.toLowerCase();
+      console.log('Recognized:', transcript);
+
+      if (transcript.includes('go up')) {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      }
+    };
+
+    this.recognition.onerror = (event: any) => {
+      console.error('Speech recognition error:', event);
+      this.restartListening(); // Restart if any error happens
+    };
+
+    this.recognition.onend = () => {
+      console.warn('Speech recognition stopped, restarting...');
+      this.restartListening(); // Restart if it stops
+    };
+
+    this.recognition.start();
+  }
+  restartListening() {
+    setTimeout(() => this.recognition.start(), 1000); // Restart after 1 sec
+  }
 }
