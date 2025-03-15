@@ -124,22 +124,37 @@
       justify-content: center;
 
       .profile-image {
+        position: relative;
         width: 350px;
         height: 350px;
         border-radius: 50%;
         overflow: hidden;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         border: 8px solid #fff;
-        display: flex; // Ensure image aligns correctly
+        display: flex;
         align-items: center;
         justify-content: center;
 
         img {
-          width: 100%; // Ensure the image fills the container
+          width: 100%;
           height: 100%;
-          object-fit: cover; // Crop without distortion
+          object-fit: cover;
         }
 
+        &::before {
+          content: "";
+          position: absolute;
+          top: -10px;
+          left: -10px;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          padding: 10px;
+          border: 5px solid transparent;
+          border-top-color: rgba(80, 73, 103, 0.91);  // Adjust primary color
+          border-right-color: #64b5f6; // Gradient effect
+          animation: rotateBorder 3s linear infinite;
+        }
         .image-placeholder {
           width: 100%;
           height: 100%;
@@ -156,6 +171,14 @@
   }
 }
 
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
