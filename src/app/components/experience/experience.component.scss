@@ -1,0 +1,160 @@
+/* experience.component.scss */
+.experience-section {
+  padding: 60px 0;
+  //background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-color: #ffffff;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #343a40;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background-color: #007bff;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #007bff;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    margin-left: -1px;
+  }
+}
+
+.timeline-item {
+  padding: 10px 40px 10px 70px;
+  position: relative;
+  margin-bottom: 30px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #007bff;
+    left: 42px;
+    top: 18px;
+    margin-left: -9px;
+  }
+}
+
+.timeline-header {
+  margin-bottom: 15px;
+
+  h3 {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    color: #212529;
+  }
+
+  h4 {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #007bff;
+  }
+
+  .period {
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+}
+
+.timeline-content {
+  ul {
+    padding-left: 20px;
+
+    li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .timeline:before {
+    left: 31px;
+  }
+
+  .timeline-item {
+    padding-left: 50px;
+
+    &:before {
+      left: 22px;
+    }
+  }
+}
+
+:host-context(body.dark-mode) {
+  .experience-section {
+    background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+  }
+
+  .section-title {
+    color: #fff;
+
+    &:after {
+      background-color: #64b5f6;
+    }
+  }
+
+  .timeline {
+    &:before {
+      background-color: #64b5f6;
+    }
+  }
+
+  .timeline-item {
+    background-color: #2a2a2a;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.1);
+
+    &:before {
+      background-color: #64b5f6;
+    }
+  }
+
+  .timeline-header {
+    h3 {
+      color: #fff;
+    }
+
+    h4 {
+      color: #64b5f6;
+    }
+
+    .period {
+      color: #bbb;
+    }
+  }
+
+  .timeline-content {
+    ul {
+      li {
+        color: #ddd;
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<!-- src/app/components/about/about.component.html -->
+<section class="about section" id="about">
+  <div class="container">
+    <div class="section-header">
+      <h2>About Me</h2>
+      <div class="underline"></div>
+    </div>
+
+    <div class="about-content">
+      <div class="image-content">
+        <div class="profile-image">
+
+          <div class="image-placeholder">
+            <img src="vishAbout.JPG" alt=""></div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <h3>Software Engineer</h3>
+        <p>
+          I'm a passionate Software Engineer with extensive experience in developing robust backend systems
+          and responsive frontend applications. My expertise includes Java, Spring Boot, Angular, and various
+          database technologies. I'm committed to delivering high-quality, scalable solutions that meet business needs.
+        </p>
+
+        <p>
+          With a strong background in full-stack development, I enjoy taking on complex challenges and finding
+          innovative solutions. I'm continuously learning and adapting to new technologies to stay at the forefront
+          of the industry.
+        </p>
+
+        <div class="personal-info">
+          <div class="info-grid">
+            <ng-container *ngFor="let info of personalInfo">
+              <div class="info-label">{{ info.label }}:</div>
+              <div class="info-value">{{ info.value }}</div>
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="about-buttons">
+          <a href="/vishal_frontend.pdf" target="_blank" class="btn primary">Download CV</a>
+          <a (click)="onNavLinkClick('contact', $event)" class="btn secondary">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

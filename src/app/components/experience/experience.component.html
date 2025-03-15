@@ -1,0 +1,23 @@
+<!-- experience.component.html -->
+<section class="experience-section">
+  <div class="container">
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div class="timeline">
+      <div *ngFor="let exp of experiences" class="timeline-item">
+        <div class="timeline-header">
+          <h3>{{ exp.title }}</h3>
+          <h4>{{ exp.company }}</h4>
+          <span class="period">{{ exp.startDate }} - {{ exp.endDate }}</span>
+        </div>
+        <div class="timeline-content">
+          <ul>
+            <li *ngFor="let responsibility of exp.responsibilities">
+              {{ responsibility }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

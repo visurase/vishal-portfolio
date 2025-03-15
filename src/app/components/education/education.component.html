@@ -1,0 +1,35 @@
+<!-- src/app/components/education/education.component.html -->
+<section class="education section" id="education">
+  <div class="container">
+    <div class="section-header">
+      <h2>Education</h2>
+      <div class="underline"></div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let education of educations">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="education-card">
+            <div class="card-header">
+              <div class="logo-placeholder">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="header-content">
+                <h3>{{ education.degree }}</h3>
+                <h4>{{ education.institution }}</h4>
+                <div class="duration">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>{{ education.duration }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <p>{{ education.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<!-- src/app/components/home/home.component.html -->
+<section class="home">
+  <div class="container">
+    <div class="hero-content">
+      <div class="text-content">
+        <h1>Vishal Surase</h1>
+        <h2>I'm a <span class="typed-text">Full Stack Developer</span><span class="cursor">&nbsp;</span></h2>
+        <p class="intro">
+          Passionate software engineer with experience in full-stack development,
+          building responsive web applications using Angular, Spring Boot, and more.
+        </p>
+        <div class="cta-buttons">
+          <button class="btn primary" (click)="onNavLinkClick('contact',$event)">Get In Touch</button>
+          <button class="btn secondary" (click)="onNavLinkClick('projects',$event)">View My Work</button>
+
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/vishalsurase" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/vishalsurase" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:surasevishal&#64;gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      <div class="image-content">
+        <div class="profile-image">
+
+          <div class="image-placeholder">
+            <img src="vishHome.jpg" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

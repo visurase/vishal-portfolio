@@ -1,0 +1,56 @@
+<!-- src/app/components/skills/skills.component.html -->
+<section class="skills" id="skills">
+  <div class="container">
+    <div class="section-header">
+      <h2>My Skills</h2>
+      <div class="underline"></div>
+    </div>
+
+    <div class="skills-content">
+      <div class="skills-text">
+        <p>I've developed a diverse set of skills over the years, allowing me to tackle various aspects of web development. Here's a snapshot of my technical expertise:</p>
+      </div>
+
+      <div class="skills-categories">
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <div class="skills-list">
+            <div class="skill-item" *ngFor="let skill of frontendSkills">
+              <div class="skill-info">
+                <span class="skill-name">{{skill.name}}</span>
+                <span class="skill-percentage">{{skill.percentage}}%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" [style.width]="skill.percentage + '%'"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Backend</h3>
+          <div class="skills-list">
+            <div class="skill-item" *ngFor="let skill of backendSkills">
+              <div class="skill-info">
+                <span class="skill-name">{{skill.name}}</span>
+                <span class="skill-percentage">{{skill.percentage}}%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" [style.width]="skill.percentage + '%'"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Other Skills</h3>
+          <div class="other-skills">
+            <div class="skill-badge" *ngFor="let skill of otherSkills">
+              {{skill}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

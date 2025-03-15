@@ -1,0 +1,37 @@
+<!-- src/app/components/header/header.component.html -->
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <a routerLink="/">Vishal Surase</a>
+      <span class="subtitle">Software Engineer</span>
+    </div>
+
+    <button class="menu-toggle" (click)="toggleMenu()">
+      <span class="material-icons">{{ isMenuOpen ? 'close' : 'menu' }}</span>
+    </button>
+
+    <nav class="navigation" [class.open]="isMenuOpen">
+      <ul>
+<!--        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>-->
+<!--        <li><a routerLink="/about" routerLinkActive="active">About</a></li>-->
+<!--        <li><a routerLink="/experience" routerLinkActive="active">Experience</a></li>-->
+<!--        <li><a routerLink="/skills" routerLinkActive="active">Skills</a></li>-->
+<!--        <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>-->
+<!--        <li><a routerLink="/education" routerLinkActive="active">Education</a></li>-->
+<!--        <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>-->
+        <li><a href="#home" (click)="onNavLinkClick('home',$event)">Home</a></li>
+        <li><a href="#about" (click)="onNavLinkClick('about',$event)">About</a></li>
+        <li><a href="#experience" (click)="onNavLinkClick('experience',$event)">Experience</a></li>
+        <li><a href="#skills" (click)="onNavLinkClick('skills',$event)">Skills</a></li>
+        <li><a href="#projects" (click)="onNavLinkClick('projects', $event)">Projects</a></li>
+        <li><a href="#education" (click)="onNavLinkClick('education',$event)">Education</a></li>
+        <li><a href="#contact" (click)="onNavLinkClick('contact',$event)">Contact</a></li>
+        <li>
+          <button class="theme-toggle" (click)="toggleTheme()">
+            <span class="material-icons">{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
