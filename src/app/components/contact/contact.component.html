@@ -31,7 +31,7 @@
       </div>
 
       <div class="col-md-6">
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+        <form [formGroup]="contactForm" class="contact-form">
           <div class="alert alert-success" *ngIf="success">
             Your message has been sent successfully!
           </div>
@@ -94,7 +94,7 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <button type="submit" class="btn btn-primary" (click)="onSubmit($event)">Send Message</button>
         </form>
       </div>
     </div>

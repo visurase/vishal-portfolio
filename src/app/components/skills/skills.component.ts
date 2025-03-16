@@ -21,25 +21,25 @@ interface SkillCategory {
 
 export class SkillsComponent {
   frontendSkills: Skill[] = [
-    { name: 'HTML/CSS', percentage: 95 },
-    { name: 'JavaScript', percentage: 90 },
-    { name: 'Angular', percentage: 88 },
-    { name: 'React', percentage: 85 },
-    { name: 'TypeScript', percentage: 90 }
+    { name: 'Angular', percentage: 95 },
+    { name: 'HTML/CSS', percentage: 80 },
+    { name: 'JavaScript', percentage: 80 },
+    { name: 'TypeScript', percentage: 90 },
+    { name: 'Micro-frontEnd', percentage: 80 },
+    { name: 'React', percentage: 20 }
   ];
 
   backendSkills: Skill[] = [
-    { name: 'Node.js', percentage: 85 },
-    { name: 'Express', percentage: 80 },
-    { name: 'MongoDB', percentage: 75 },
-    { name: 'SQL', percentage: 78 },
+    { name: 'Java', percentage: 65 },
+    { name: 'Spring', percentage: 65 },
     { name: 'RESTful APIs', percentage: 90 }
   ];
 
   otherSkills: string[] = [
-    'Git', 'Docker', 'AWS', 'Firebase', 'Jest',
+    'Git', 'Docker', 'AWS', 'Firebase', 'Jest', 'Drupal',
     'Jasmine', 'Webpack', 'CI/CD', 'Agile/Scrum',
-    'UI/UX Design', 'Responsive Design', 'Performance Optimization'
+    'UI/UX Design', 'Responsive Design', 'Performance Optimization',
+
   ];
 
   skillCategories: SkillCategory[] = [

@@ -12,6 +12,7 @@ import {EducationComponent} from './components/education/education.component';
 import {NgClass, NgForOf, NgOptimizedImage, TitleCasePipe} from '@angular/common';
 import {PortfolioService} from './services/portfolio.service';
 import { Subscription } from 'rxjs';
+import {ServicesComponent} from './components/services/services.component';
 
 declare global {
   interface Window {
@@ -21,7 +22,7 @@ declare global {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FooterComponent, HeaderComponent, ContactComponent, ExperienceComponent, SkillsComponent, AboutComponent, HomeComponent, ProjectsComponent, EducationComponent, NgForOf, NgClass, TitleCasePipe, NgOptimizedImage],
+  imports: [RouterOutlet, FooterComponent, HeaderComponent, ContactComponent, ExperienceComponent, SkillsComponent, AboutComponent, HomeComponent, ProjectsComponent, EducationComponent, NgForOf, NgClass, TitleCasePipe, NgOptimizedImage, ServicesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -36,7 +37,9 @@ export class AppComponent implements OnInit {
     { id: 'skills', active: false },
     { id: 'projects', active: false },
     { id: 'education', active: false },
-    { id: 'contact', active: false }
+    { id: 'services', active: false },
+    { id: 'contact', active: false },
+
   ];
 
   activeSection = 'home';
